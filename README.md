@@ -1,2 +1,2 @@
-# template-auth-postgres
+# Docker PostgreSQL database
 PostegreSQL
