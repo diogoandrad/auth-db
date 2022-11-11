@@ -1,25 +1,24 @@
 version: "3.9"
 
 services:
-
   postgres:
     build: database
+    restart: always
     container_name: postgres
     command: ["postgres",
               "-c", "logging_collector=on",
               "-c", "log_directory=/var/lib/postgresql/logs",
               "-c", "log_filename=postgres.log",
               "-c", "log_statement=all"]
-    restart: always
-    volumes:
-      - ${POSTGRE_DIR}:/var/lib/postgresql/data
-      - ${POSTGRE_LOG}:/var/lib/postgresql/logs
     environment:
-      POSTGRES_DB: ${POSTGRE_DB}
-      POSTGRES_USER: ${POSTGRE_USER}
-      POSTGRES_PASSWORD: ${POSTGRE_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     ports:
-      - 5433:5432
+      - ${POSTGRES_HOST_PORT}:${POSTGRES_CONTAINER_PORT}
+    volumes:
+      - ${POSTGRES_DIR}:/var/lib/postgresql/data
+      - ${POSTGRES_LOG}:/var/lib/postgresql/logs
 
 volumes:
   postgres:
