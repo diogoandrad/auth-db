@@ -5,12 +5,12 @@ Container PostgreSQL
 
 Clone the project:
 ```bash
-git clone https://github.com/diogoandrad/auth-db.git
+git clone https://github.com/diogoandrad/docker-postgres.git
 ```
 
 Enter the project folder:
 ```bash
-cd auth-db
+cd docker-postgres
 ```
 
 Build the image:

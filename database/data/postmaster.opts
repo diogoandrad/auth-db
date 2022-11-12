@@ -1,1 +1,0 @@
-/usr/lib/postgresql/15/bin/postgres "-c" "logging_collector=on" "-c" "log_directory=/var/lib/postgresql/logs" "-c" "log_filename=postgres.log" "-c" "log_statement=all"
